@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jamaica Bar — караоке лаундж-бар в Кокшетау | Меню и бронь столов</title>
+<meta name="description" content="Jamaica Bar — караоке лаундж-бар в Кокшетау, ул. Ауэзова 189а/2. Караоке, DJ, живая музыка, VIP-комната, кухня и бар. Открыто 17:00–03:00. Онлайн-бронь стола.">
+<meta property="og:title" content="Jamaica Bar — караоке лаундж-бар в Кокшетау">
+<meta property="og:description" content="Караоке, DJ, VIP-комната, кухня и коктейли. Ежедневно 17:00–03:00. Бронь стола онлайн.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta name="theme-color" content="#0c0e0b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0e0b; --bg2:#13160f; --card:#181c14; --line:#2a3024;
+  --text:#f3efe4; --muted:#a8a693;
+  --gold:#f6bd2c; --green:#22a85f; --red:#e4473b;
+  --radius:18px;
+  --ff-h:'Unbounded',system-ui,sans-serif; --ff:'Manrope',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{background:var(--bg);color:var(--text);font-family:var(--ff);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+.stripe{height:4px;background:linear-gradient(90deg,var(--green) 0 33%,var(--gold) 33% 66%,var(--red) 66%)}
+h1,h2,h3{font-family:var(--ff-h);line-height:1.12;letter-spacing:-.01em}
+h2{font-size:clamp(26px,4.4vw,42px);margin-bottom:10px}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--gold)}
+.lead{color:var(--muted);max-width:620px;font-size:17px}
+section{padding:84px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 22px;border-radius:999px;font-weight:800;border:0;cursor:pointer;transition:transform .15s,background .2s,box-shadow .2s;white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn-gold{background:var(--gold);color:#1a1405;box-shadow:0 8px 28px -10px rgba(246,189,44,.7)}
+.btn-gold:hover{background:#ffcb45}
+.btn-ghost{background:rgba(255,255,255,.06);border:1px solid var(--line)}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.btn-wa{background:#25d366;color:#062b14}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(12,14,11,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:66px;gap:16px}
+.logo{font-family:var(--ff-h);font-weight:800;font-size:20px;display:flex;align-items:center;gap:10px}
+.logo-dot{width:30px;height:30px;border-radius:50%;background:conic-gradient(var(--green) 0 120deg,var(--gold) 0 240deg,var(--red) 0);box-shadow:0 0 18px rgba(246,189,44,.4)}
+.logo small{display:block;font-family:var(--ff);font-weight:600;font-size:11px;color:var(--muted);letter-spacing:.06em}
+.nav-links{display:flex;gap:26px;font-weight:600;font-size:15px;color:var(--muted)}
+.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex;gap:10px;align-items:center}
+.nav-right .btn{padding:10px 18px;font-size:14px}
+.burger{display:none;width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid var(--line);cursor:pointer;font-size:20px}
+.mnav{position:fixed;inset:0;background:var(--bg);z-index:60;display:none;flex-direction:column;padding:22px}
+.mnav.open{display:flex}
+.mnav-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}
+.mnav a.l{font-family:var(--ff-h);font-size:26px;padding:12px 0;border-bottom:1px solid var(--line)}
+.mnav .btn{margin-top:26px}
+
+/* hero */
+.hero{position:relative;padding:70px 0 80px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto;height:720px;background:
+  radial-gradient(500px 340px at 18% 30%,rgba(34,168,95,.28),transparent 70%),
+  radial-gradient(520px 360px at 85% 20%,rgba(246,189,44,.22),transparent 70%),
+  radial-gradient(420px 300px at 60% 85%,rgba(228,71,59,.18),transparent 70%);pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.status{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--line);font-size:14px;font-weight:700;margin-bottom:22px}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--muted)}
+.status.on i{background:var(--green);box-shadow:0 0 0 4px rgba(34,168,95,.25);animation:pulse 1.8s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(34,168,95,0)}}
+.hero h1{font-size:clamp(38px,7vw,76px);font-weight:800}
+.hero h1 span{color:var(--gold)}
+.hero p.sub{font-size:19px;color:var(--muted);margin:20px 0 30px;max-width:540px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:40px;max-width:560px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+.stat b{font-family:var(--ff-h);font-size:24px;display:block}
+.stat span{font-size:13px;color:var(--muted)}
+.hero-card{position:relative;border-radius:28px;min-height:460px;overflow:hidden;border:1px solid var(--line);
+  background:linear-gradient(160deg,#1d2716,#0f120c 60%,#2a1512)}
+.hero-card .vinyl{position:absolute;width:420px;height:420px;right:-120px;top:-60px;border-radius:50%;
+  background:repeating-radial-gradient(circle,#111 0 3px,#1a1a1a 3px 5px);box-shadow:0 0 0 1px #222;animation:spin 14s linear infinite}
+.hero-card .vinyl::after{content:"";position:absolute;inset:36%;border-radius:50%;background:conic-gradient(var(--green) 0 120deg,var(--gold) 0 240deg,var(--red) 0)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-card .mic{position:absolute;left:28px;bottom:28px;right:28px}
+.hero-card .mic h3{font-size:24px;margin-bottom:8px}
+.hero-card .mic p{color:var(--muted);font-size:15px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{padding:7px 12px;border-radius:999px;background:rgba(0,0,0,.45);border:1px solid var(--line);font-size:13px;font-weight:700}
+.eq{position:absolute;left:28px;top:28px;display:flex;gap:5px;align-items:flex-end;height:46px}
+.eq i{width:7px;border-radius:4px;background:var(--gold);animation:eq 1s ease-in-out infinite}
+.eq i:nth-child(2){animation-delay:.2s;background:var(--green)}.eq i:nth-child(3){animation-delay:.4s}.eq i:nth-child(4){animation-delay:.1s;background:var(--red)}.eq i:nth-child(5){animation-delay:.3s}
+@keyframes eq{0%,100%{height:12px}50%{height:46px}}
+
+/* vibe */
+.vibe-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.vcard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;transition:transform .2s,border-color .2s}
+.vcard:hover{transform:translateY(-4px);border-color:#3c4532}
+.vcard .ic{font-size:30px;margin-bottom:14px}
+.vcard h3{font-size:18px;margin-bottom:8px}
+.vcard p{color:var(--muted);font-size:15px}
+
+/* menu */
+#menu{background:var(--bg2)}
+.menu-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.switch{display:inline-flex;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px;margin-top:28px}
+.switch button{border:0;background:none;padding:10px 22px;border-radius:999px;font-weight:800;cursor:pointer;color:var(--muted)}
+.switch button.on{background:var(--gold);color:#1a1405}
+.search{flex:1;min-width:220px;max-width:340px;position:relative}
+.search input{width:100%;padding:13px 16px 13px 42px;border-radius:999px;background:var(--card);border:1px solid var(--line);outline:none}
+.search input:focus{border-color:var(--gold)}
+.search::before{content:"🔍";position:absolute;left:15px;top:50%;transform:translateY(-50%);font-size:14px;opacity:.7}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:20px 0 6px;scrollbar-width:none;position:sticky;top:66px;z-index:5;background:var(--bg2)}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);font-weight:700;font-size:14px;cursor:pointer;color:var(--muted)}
+.chip.on{color:var(--text);border-color:var(--gold);background:rgba(246,189,44,.1)}
+.cat{margin-top:34px}
+.cat h3{font-size:20px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.cat h3 small{font-family:var(--ff);font-size:13px;color:var(--muted);font-weight:600}
+.items{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.item{display:flex;gap:14px;justify-content:space-between;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+.item h4{font-size:16px;font-weight:800}
+.item h4 em{font-style:normal;color:var(--muted);font-weight:600;font-size:13px;margin-left:6px}
+.item p{font-size:13.5px;color:var(--muted);margin-top:4px}
+.item .r{display:flex;flex-direction:column;align-items:flex-end;gap:8px;flex:none}
+.price{font-family:var(--ff-h);font-size:16px;color:var(--gold);white-space:nowrap}
+.qty{display:flex;align-items:center;gap:6px}
+.qty button{width:32px;height:32px;border-radius:10px;border:1px solid var(--line);background:rgba(255,255,255,.05);cursor:pointer;font-weight:800;font-size:17px}
+.qty button.add{background:var(--gold);color:#1a1405;border:0}
+.qty span{min-width:18px;text-align:center;font-weight:800}
+.note{margin-top:26px;color:var(--muted);font-size:14px}
+.empty{padding:40px;text-align:center;color:var(--muted)}
+
+/* bill */
+.bill-bar{position:fixed;left:50%;bottom:18px;transform:translate(-50%,140%);z-index:40;display:flex;align-items:center;gap:14px;
+  background:var(--gold);color:#1a1405;border-radius:999px;padding:10px 10px 10px 20px;font-weight:800;box-shadow:0 14px 40px -10px rgba(0,0,0,.8);transition:transform .3s;cursor:pointer;max-width:calc(100% - 28px);white-space:nowrap}
+.bill-bar.show{transform:translate(-50%,0)}
+.bill-bar .btn{background:#1a1405;color:var(--gold);padding:10px 16px}
+.drawer{position:fixed;inset:0;z-index:70;display:none}
+.drawer.open{display:block}
+.drawer .bg{position:absolute;inset:0;background:rgba(0,0,0,.6)}
+.drawer .panel{position:absolute;right:0;top:0;bottom:0;width:min(440px,100%);background:var(--bg2);border-left:1px solid var(--line);padding:22px;display:flex;flex-direction:column}
+.panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.x{width:40px;height:40px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.05);cursor:pointer;font-size:18px}
+.bill-list{flex:1;overflow:auto;display:flex;flex-direction:column;gap:10px}
+.bl{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:12px;border-radius:14px;background:var(--card);border:1px solid var(--line)}
+.bl b{font-size:14px}.bl small{display:block;color:var(--muted)}
+.sum{border-top:1px solid var(--line);padding-top:14px;margin-top:14px;display:grid;gap:6px}
+.sum div{display:flex;justify-content:space-between;color:var(--muted)}
+.sum .tot{color:var(--text);font-family:var(--ff-h);font-size:20px}
+.panel .btn{margin-top:14px;width:100%}
+
+/* company */
+.sets{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.set{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column}
+.set.hit{border-color:var(--gold)}
+.set .badge{position:absolute;top:-11px;left:20px;background:var(--gold);color:#1a1405;font-size:12px;font-weight:800;padding:4px 10px;border-radius:999px}
+.set h3{font-size:18px;margin-bottom:4px}
+.set .who{color:var(--muted);font-size:13px;font-weight:700}
+.set p{color:var(--muted);font-size:14px;margin:12px 0 16px;flex:1}
+.set .pp{font-family:var(--ff-h);font-size:24px;color:var(--gold)}
+.set .per{font-size:13px;color:var(--muted);margin:2px 0 14px}
+.set .btn{padding:11px 16px;font-size:14px}
+.calc{margin-top:28px;background:linear-gradient(120deg,rgba(34,168,95,.14),rgba(246,189,44,.1));border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
+.calc h3{font-size:18px;margin-bottom:6px}
+.calc p{color:var(--muted);font-size:14px}
+.range{display:flex;align-items:center;gap:14px;margin-top:14px}
+.range input{flex:1;accent-color:var(--gold)}
+.range b{font-family:var(--ff-h);font-size:22px;min-width:40px}
+.calc-out{text-align:right}
+.calc-out b{display:block;font-family:var(--ff-h);font-size:28px;color:var(--gold)}
+.calc-out span{font-size:13px;color:var(--muted)}
+
+/* booking */
+#book{background:var(--bg2)}
+.book-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;margin-top:40px;align-items:start}
+.box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.cal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.cal-head b{font-family:var(--ff-h);font-size:17px;text-transform:capitalize}
+.cal-head button{width:38px;height:38px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.05);cursor:pointer}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center}
+.cal .dw{font-size:12px;color:var(--muted);font-weight:700;padding:4px 0}
+.cal button{aspect-ratio:1;border-radius:12px;border:1px solid transparent;background:rgba(255,255,255,.04);cursor:pointer;font-weight:700;font-size:15px}
+.cal button:hover:not(:disabled){border-color:var(--gold)}
+.cal button:disabled{opacity:.25;cursor:default}
+.cal button.wk{color:var(--gold)}
+.cal button.sel{background:var(--gold);color:#1a1405}
+.cal button.today{border-color:var(--green)}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;font-size:13px;color:var(--muted)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:4px;margin-right:6px;vertical-align:-1px}
+.steps{margin-top:18px;display:grid;gap:10px}
+.steps div{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--muted)}
+.steps b{flex:none;width:26px;height:26px;border-radius:50%;background:rgba(246,189,44,.15);color:var(--gold);display:grid;place-items:center;font-size:13px}
+form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.f{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+.f label{font-size:13px;font-weight:700;color:var(--muted)}
+.f input,.f select,.f textarea{padding:13px 14px;border-radius:12px;border:1px solid var(--line);background:#10130d;outline:none;width:100%}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--gold)}
+.f textarea{min-height:84px;resize:vertical}
+.zones{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.zones label{cursor:pointer}
+.zones input{display:none}
+.zones span{display:block;text-align:center;padding:12px 6px;border-radius:12px;border:1px solid var(--line);background:#10130d;font-size:14px;font-weight:700;color:var(--muted)}
+.zones input:checked+span{border-color:var(--gold);color:var(--text);background:rgba(246,189,44,.1)}
+.pre{display:flex;gap:10px;align-items:center;padding:12px 14px;border-radius:12px;border:1px dashed var(--line);font-size:14px;color:var(--muted);margin-bottom:12px}
+.pre input{accent-color:var(--gold);width:18px;height:18px}
+.err{color:#ff8a7f;font-size:13px;margin-bottom:10px;display:none}
+form .btn{width:100%}
+.ok{display:none;text-align:center;padding:30px 10px}
+.ok .big{font-size:52px}
+.ok h3{font-size:22px;margin:10px 0}
+.ok p{color:var(--muted);margin-bottom:20px}
+.ok .btn{margin:6px}
+
+/* reviews */
+.rev-top{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-top:30px}
+.score{display:flex;align-items:center;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 24px}
+.score b{font-family:var(--ff-h);font-size:44px;color:var(--gold)}
+.score span{color:var(--muted);font-size:14px}
+.stars{color:var(--gold);letter-spacing:2px}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.rev{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.rev .who{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.ava{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:800;background:rgba(34,168,95,.18);color:var(--green)}
+.rev .who small{display:block;color:var(--muted);font-size:12px}
+.rev p{color:#d8d4c6;font-size:15px}
+
+/* contacts */
+.ct-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:24px;margin-top:40px}
+.ct-list{display:grid;gap:12px}
+.ct{display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.ct .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(246,189,44,.12);font-size:20px;flex:none}
+.ct small{display:block;color:var(--muted);font-size:13px}
+.ct b{font-size:16px}
+.ct-btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);min-height:380px;background:var(--card)}
+.map iframe{width:100%;height:100%;min-height:380px;border:0;filter:grayscale(.3) contrast(1.05)}
+
+footer{border-top:1px solid var(--line);padding:40px 0 110px;color:var(--muted);font-size:14px}
+.ft{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.ft a:hover{color:var(--text)}
+.ft-links{display:flex;gap:18px;flex-wrap:wrap}
+.age{margin-top:20px;font-size:12px}
+
+/* assistant */
+.bot-btn{position:fixed;right:18px;bottom:18px;z-index:45;width:58px;height:58px;border-radius:50%;border:0;cursor:pointer;background:var(--green);font-size:26px;box-shadow:0 10px 30px -8px rgba(34,168,95,.8)}
+.bot-btn.up{bottom:84px}
+.bot{position:fixed;right:18px;bottom:90px;z-index:46;width:min(360px,calc(100% - 36px));max-height:70vh;display:none;flex-direction:column;background:var(--bg2);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px -10px rgba(0,0,0,.8)}
+.bot.open{display:flex}
+.bot-h{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid var(--line)}
+.bot-h b{display:block}
+.bot-h small{color:var(--green);font-weight:700}
+.bot-body{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:10px}
+.msg{max-width:88%;padding:10px 13px;border-radius:14px;font-size:14px;white-space:pre-line}
+.msg.b{background:var(--card);border:1px solid var(--line)}
+.msg.u{align-self:flex-end;background:var(--gold);color:#1a1405;font-weight:700}
+.bot-q{display:flex;gap:6px;flex-wrap:wrap;padding:10px 14px;border-top:1px solid var(--line)}
+.bot-q button{padding:7px 11px;border-radius:999px;border:1px solid var(--line);background:var(--card);font-size:13px;font-weight:700;cursor:pointer}
+.bot-in{display:flex;gap:8px;padding:0 14px 14px}
+.bot-in input{flex:1;padding:11px 14px;border-radius:999px;border:1px solid var(--line);background:#10130d;outline:none}
+.bot-in button{width:42px;border-radius:50%;border:0;background:var(--gold);cursor:pointer;font-weight:800}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:980px){
+  .nav-links,.nav-right .btn-ghost{display:none}
+  .burger{display:grid;place-items:center}
+  .hero-grid,.book-grid,.ct-grid{grid-template-columns:1fr}
+  .hero-card{min-height:340px}
+  .vibe-grid,.sets{grid-template-columns:1fr 1fr}
+  .revs{grid-template-columns:1fr}
+  .items{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  section{padding:64px 0}
+  .nav-right .btn-gold{display:none}
+  .stats{grid-template-columns:repeat(3,1fr);gap:8px}
+  .stat{padding:12px}.stat b{font-size:19px}.stat span{font-size:11.5px}
+  .vibe-grid,.sets{grid-template-columns:1fr}
+  .calc{grid-template-columns:1fr}.calc-out{text-align:left}
+  form .row{grid-template-columns:1fr}
+  .hero-cta .btn{flex:1}
+}
+</style>
+</head>
+<body>
+<div class="stripe"></div>
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo"><span class="logo-dot"></span><span>Jamaica Bar<small>КАРАОКЕ ЛАУНДЖ · КОКШЕТАУ</small></span></a>
+    <nav class="nav-links">
+      <a href="#vibe">Атмосфера</a><a href="#menu">Меню</a><a href="#company">На компанию</a><a href="#book">Бронь</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a>
+    </nav>
+    <div class="nav-right">
+      <a class="btn btn-ghost" href="tel:+77085063464">+7 708 506 34 64</a>
+      <a class="btn btn-gold" href="#book">Забронировать</a>
+      <button class="burger" id="burger" aria-label="Меню">☰</button>
+    </div>
+  </div>
+</header>
+
+<div class="mnav" id="mnav">
+  <div class="mnav-top"><span class="logo"><span class="logo-dot"></span>Jamaica Bar</span><button class="x" id="mclose">✕</button></div>
+  <a class="l" href="#vibe">Атмосфера</a><a class="l" href="#menu">Меню</a><a class="l" href="#company">На компанию</a><a class="l" href="#book">Бронь стола</a><a class="l" href="#reviews">Отзывы</a><a class="l" href="#contacts">Контакты</a>
+  <a class="btn btn-gold" href="#book">Забронировать стол</a>
+  <a class="btn btn-ghost" style="margin-top:10px" href="tel:+77085063464">📞 +7 708 506 34 64</a>
+</div>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="status" id="status"><i></i><span>Ежедневно 17:00–03:00</span></div>
+      <h1>Jamaica <span>Bar</span></h1>
+      <p class="sub">Караоке лаундж-бар в Кокшетау. Поём до утра, вкусно едим, отмечаем дни рождения — с DJ, живым звуком и VIP-комнатой.</p>
+      <div class="hero-cta">
+        <a href="#book" class="btn btn-gold">🎤 Забронировать стол</a>
+        <a href="#menu" class="btn btn-ghost">Смотреть меню</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>4.7 ★</b><span>284 оценки в 2GIS</span></div>
+        <div class="stat"><b>до 03:00</b><span>открыто каждый день</span></div>
+        <div class="stat"><b>VIP</b><span>отдельная комната</span></div>
+      </div>
+    </div>
+    <div class="hero-card reveal">
+      <div class="vinyl"></div>
+      <div class="eq"><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="mic">
+        <h3>Сегодня поём громко</h3>
+        <p>Тысячи песен в караоке, DJ-сеты и живая музыка по выходным.</p>
+        <div class="tags"><span class="tag">🎤 Караоке</span><span class="tag">🎧 DJ</span><span class="tag">🍹 Коктейли</span><span class="tag">🥩 Стейки</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIBE -->
+<section id="vibe">
+  <div class="wrap">
+    <div class="eyebrow">Атмосфера</div>
+    <h2>Больше, чем просто бар</h2>
+    <p class="lead">Сюда возвращаются каждые выходные — за музыкой, кухней и командой, которая делает вечер.</p>
+    <div class="vibe-grid">
+      <div class="vcard reveal"><div class="ic">🎤</div><h3>Караоке</h3><p>Качественный звук и большой каталог — от хитов 90-х до свежих треков.</p></div>
+      <div class="vcard reveal"><div class="ic">🎧</div><h3>DJ и живой звук</h3><p>Диджей держит танцпол, музыкант поддерживает караоке живым исполнением.</p></div>
+      <div class="vcard reveal"><div class="ic">🛋️</div><h3>VIP-комната</h3><p>Отдельное пространство для своей компании, семейного праздника или дня рождения.</p></div>
+      <div class="vcard reveal"><div class="ic">🎈</div><h3>Праздники</h3><p>Поможем с оформлением стола, сетами на компанию и музыкой под ваш повод.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="wrap">
+    <div class="menu-head">
+      <div>
+        <div class="eyebrow">Меню</div>
+        <h2>Кухня и бар</h2>
+        <p class="lead">Нажмите «+», чтобы примерно посчитать счёт и приложить предзаказ к брони.</p>
+      </div>
+      <div class="search"><input id="q" type="search" placeholder="Найти блюдо или напиток"></div>
+    </div>
+    <div class="switch"><button class="on" data-tab="kitchen">🍽️ Кухня</button><button data-tab="bar">🍸 Бар</button></div>
+    <div class="chips" id="chips"></div>
+    <div id="menuList"></div>
+    <p class="note">Обслуживание 10%. Цены указаны в тенге по меню заведения и могут меняться — уточняйте у официанта.</p>
+  </div>
+</section>
+
+<!-- COMPANY -->
+<section id="company">
+  <div class="wrap">
+    <div class="eyebrow">Блюда на компанию</div>
+    <h2>Сеты на 7–10 человек</h2>
+    <p class="lead">Большие подачи на весь стол — удобно для дней рождения, встреч с друзьями и корпоративов.</p>
+    <div class="sets" id="sets"></div>
+    <div class="calc reveal">
+      <div>
+        <h3>Сколько выйдет на человека?</h3>
+        <p>Выберите сет и количество гостей — посчитаем с учётом обслуживания 10%.</p>
+        <div class="f" style="margin:14px 0 0"><select id="calcSet"></select></div>
+        <div class="range"><input type="range" id="calcN" min="2" max="20" value="8"><b id="calcNv">8</b></div>
+      </div>
+      <div class="calc-out"><b id="calcPer">—</b><span id="calcTot">на человека</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="book">
+  <div class="wrap">
+    <div class="eyebrow">Бронь</div>
+    <h2>Забронировать стол</h2>
+    <p class="lead">Выберите дату, оставьте заявку — администратор перезвонит и подтвердит. На выходные лучше бронировать заранее.</p>
+    <div class="book-grid">
+      <div class="box reveal">
+        <div class="cal-head"><button id="prev">←</button><b id="month"></b><button id="next">→</button></div>
+        <div class="cal" id="cal"></div>
+        <div class="legend"><span><i style="background:rgba(255,255,255,.08)"></i>доступно</span><span><i style="background:var(--gold)"></i>ваш выбор</span><span><i style="border:1px solid var(--green)"></i>сегодня</span></div>
+        <div class="steps">
+          <div><b>1</b>Вы отправляете заявку — она приходит администратору в WhatsApp</div>
+          <div><b>2</b>Администратор звонит и уточняет детали</div>
+          <div><b>3</b>Стол закреплён за вами — ждём в гости</div>
+        </div>
+      </div>
+      <div class="box reveal">
+        <form id="form" novalidate>
+          <div class="row">
+            <div class="f"><label>Дата</label><input id="fDate" readonly placeholder="Выберите в календаре"></div>
+            <div class="f"><label>Время</label><select id="fTime"></select></div>
+          </div>
+          <div class="f"><label>Зона</label>
+            <div class="zones">
+              <label><input type="radio" name="zone" value="Общий зал" checked><span>Зал</span></label>
+              <label><input type="radio" name="zone" value="VIP-комната"><span>VIP</span></label>
+              <label><input type="radio" name="zone" value="Ближе к сцене"><span>У сцены</span></label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="f"><label>Гостей</label><input id="fGuests" type="number" min="1" max="60" value="4"></div>
+            <div class="f"><label>Повод</label><select id="fReason"><option>Просто отдохнуть</option><option>День рождения</option><option>Семейный праздник</option><option>Корпоратив</option><option>Девичник / мальчишник</option><option>Другое</option></select></div>
+          </div>
+          <div class="row">
+            <div class="f"><label>Имя</label><input id="fName" placeholder="Как к вам обращаться"></div>
+            <div class="f"><label>Телефон</label><input id="fPhone" type="tel" placeholder="+7 7__ ___ __ __"></div>
+          </div>
+          <div class="f"><label>Комментарий</label><textarea id="fComment" placeholder="Пожелания: торт, шары, музыка…"></textarea></div>
+          <label class="pre" id="preWrap"><input type="checkbox" id="fPre"><span id="preTxt">Приложить предзаказ из меню (пока пусто)</span></label>
+          <div class="err" id="err"></div>
+          <button class="btn btn-gold" type="submit">Отправить заявку в WhatsApp</button>
+        </form>
+        <div class="ok" id="ok">
+          <div class="big">🎉</div>
+          <h3>Заявка готова!</h3>
+          <p>Если WhatsApp не открылся автоматически — нажмите кнопку ниже. Администратор перезвонит для подтверждения.</p>
+          <a class="btn btn-wa" id="okWa" target="_blank" rel="noopener">Открыть WhatsApp</a>
+          <button class="btn btn-ghost" id="again">Новая заявка</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="eyebrow">Отзывы</div>
+    <h2>Что говорят гости</h2>
+    <div class="rev-top">
+      <div class="score"><b>4.7</b><div><div class="stars">★★★★★</div><span>284 оценки · 177 отзывов в 2GIS</span></div></div>
+      <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://2gis.kz/kokshetau/search/Jamaica%20Bar">Все отзывы в 2GIS →</a>
+    </div>
+    <div class="revs">
+      <div class="rev reveal"><div class="who"><div class="ava">Т</div><div><b>Таисия</b><small>Частый гость · июль 2026</small></div></div><div class="stars">★★★★★</div><p>Хорошее заведение, кухня супер, шоты вообще бомба! Спасибо персоналу за прекрасный вечер.</p></div>
+      <div class="rev reveal"><div class="who"><div class="ava">Г</div><div><b>Гульден</b><small>сентябрь 2026</small></div></div><div class="stars">★★★★★</div><p>Мы каждые выходные у вас. Диджей просто супер, и весь коллектив — молодцы! Процветайте!</p></div>
+      <div class="rev reveal"><div class="who"><div class="ava">Г</div><div><b>Гульзайра</b><small>сентябрь 2026</small></div></div><div class="stars">★★★★★</div><p>Отличный музыкант, живой звук, караоке на высшем уровне — атмосфера и много любимых песен.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section id="contacts" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="eyebrow">Контакты</div>
+    <h2>Как нас найти</h2>
+    <div class="ct-grid">
+      <div class="ct-list">
+        <div class="ct"><div class="ic">📍</div><div><small>Адрес</small><b>Кокшетау, ул. Мухтара Ауэзова, 189а/2</b><small>Остановка «Университет им. Абая Мырзахметова» — 1 мин пешком</small></div></div>
+        <div class="ct"><div class="ic">🕔</div><div><small>Время работы</small><b>Ежедневно 17:00–03:00</b></div></div>
+        <a class="ct" href="tel:+77085063464"><div class="ic">📞</div><div><small>Телефон</small><b>+7 708 506 34 64</b></div></a>
+        <div class="ct-btns">
+          <a class="btn btn-wa" target="_blank" rel="noopener" href="https://wa.me/77085063464">WhatsApp</a>
+          <!-- TODO: вставить ссылку на Instagram бара -->
+          <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://instagram.com/">Instagram</a>
+          <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://2gis.kz/kokshetau/search/Jamaica%20Bar">2GIS</a>
+          <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://yandex.kz/maps/?text=Jamaica%20Bar%20%D0%9A%D0%BE%D0%BA%D1%88%D0%B5%D1%82%D0%B0%D1%83%20%D0%90%D1%83%D1%8D%D0%B7%D0%BE%D0%B2%D0%B0%20189%D0%B0">Яндекс Карты</a>
+        </div>
+      </div>
+      <div class="map"><iframe loading="lazy" title="Карта" src="https://yandex.ru/map-widget/v1/?text=%D0%9A%D0%BE%D0%BA%D1%88%D0%B5%D1%82%D0%B0%D1%83%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9C%D1%83%D1%85%D1%82%D0%B0%D1%80%D0%B0%20%D0%90%D1%83%D1%8D%D0%B7%D0%BE%D0%B2%D0%B0%2C%20189%D0%B0&z=16"></iframe></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div><div class="logo" style="margin-bottom:10px"><span class="logo-dot"></span>Jamaica Bar</div>Караоке лаундж-бар в Кокшетау.<br>ул. Ауэзова, 189а/2 · 17:00–03:00</div>
+      <div class="ft-links"><a href="#menu">Меню</a><a href="#company">На компанию</a><a href="#book">Бронь</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a></div>
+    </div>
+    <div class="age">© <span id="yr"></span> Jamaica Bar. Чрезмерное употребление алкоголя вредит вашему здоровью. 21+</div>
+  </div>
+</footer>
+
+<!-- bill -->
+<div class="bill-bar" id="billBar"><span id="billTxt">0 позиций · 0 ₸</span><span class="btn">Мой счёт</span></div>
+<div class="drawer" id="drawer"><div class="bg" data-close></div>
+  <div class="panel">
+    <div class="panel-head"><h3>Мой счёт</h3><button class="x" data-close>✕</button></div>
+    <div class="bill-list" id="billList"></div>
+    <div class="sum"><div><span>Сумма</span><span id="sSub">0 ₸</span></div><div><span>Обслуживание 10%</span><span id="sSrv">0 ₸</span></div><div class="tot"><span>Итого</span><span id="sTot">0 ₸</span></div></div>
+    <a href="#book" class="btn btn-gold" id="toBook">Приложить к брони</a>
+    <button class="btn btn-ghost" id="clearBill" style="margin-top:8px">Очистить</button>
+  </div>
+</div>
+
+<!-- assistant -->
+<button class="bot-btn" id="botBtn" aria-label="Помощник">💬</button>
+<div class="bot" id="bot">
+  <div class="bot-h"><div><b>Помощник Jamaica</b><small>● онлайн</small></div><button class="x" id="botX">✕</button></div>
+  <div class="bot-body" id="botBody"></div>
+  <div class="bot-q" id="botQ"></div>
+  <form class="bot-in" id="botForm"><input id="botIn" placeholder="Спросите что-нибудь…"><button>➤</button></form>
+</div>
+
+<script>
+const PHONE='77085063464';
+const fmt=n=>n.toLocaleString('ru-RU').replace(/,/g,' ')+' ₸';
+const $=s=>document.querySelector(s);
+
+/* ===== MENU DATA ===== */
+const SH='Соус шашлычный, лук маринованный, огурец, помидор, лаваш';
+const MENU={
+kitchen:[
+ {c:'Закуски к пиву',i:[
+  ['Крылышки Баффало','500 г',2900,'Крылышки, соус барбекю, кунжут'],
+  ['Крылышки в соусе сладкий чили','500 г',2900,'Крылышки, соус сладкий чили, кунжут'],
+  ['Крылышки в хрустящей панировке','800 г',2800,''],
+  ['Начос','',1300,''],
+  ['Креветки пивные','',3300,'Креветки, соевый соус, чеснок, лимон'],
+  ['Креветки темпура','',2900,''],
+  ['Сырные палочки','',2700,''],
+  ['Гренки ржаные с чесноком','',1200,''],
+  ['Наггетсы','',1600,''],
+  ['Картофель фри','',1100,''],
+  ['Картофельные дольки','',1100,''],
+  ['Луковые кольца','',1500,''],
+  ['Мини-чебуреки','',1500,'']]},
+ {c:'Супы',i:[
+  ['Солянка из детства','360 г',2400,'Копчёная колбаса, говядина, охотничьи колбаски, ветчина, куриный рулет, солёные огурцы, картофель, маслины, лимон, сметана'],
+  ['Чечевичный крем-суп с копчёной грудкой','400 г',2100,'Чечевица, лук, морковь, картофель, сливки, сухарики, лимон, копчёная грудка'],
+  ['Уха с морепродуктами','350 г',2800,'Сёмга, креветки, лук, картофель, сливки, болгарский перец, кинза'],
+  ['Лёгкий куриный супчик','350 г',1500,'Куриное филе, лапша кеспе, картофель, лук, морковь, кинза, багет'],
+  ['Крем-суп грибной','350 г',2100,'Шампиньоны, лук, картофель, сливки, сухарики'],
+  ['Суп от шефа','380 г',3300,'Говядина, томатная паста, картофель, болгарский перец, баклажан, морковь, укроп, бородинский хлеб']]},
+ {c:'Горячие блюда',i:[
+  ['Телятина по-цюрихски','460 г',3500,'Говядина, шампиньоны, лук, картофельное пюре, сливки, кинза, черри'],
+  ['Курица с брокколи','400 г',3400,'Куриное филе, брокколи, красный лук, сливки, рис, черри, болгарский перец'],
+  ['Куриное филе на гриле с молодым картофелем','410 г',3500,'Куриное филе, картофель, сливки, мята, кунжут'],
+  ['Рёбрышки от шефа','600 г',5200,'Говяжьи рёбра, соус барбекю, кунжут, красный лук, огурец, помидор'],
+  ['Колбаски под стопку','350 г',2700,'Куриные колбаски, картофельное пюре, тушёная капуста, лист салата, пряный соус'],
+  ['Бараньи рёбрышки под соусом ромеско','600 г',5100,'Бараньи рёбра, картофельные дольки, соус ромеско, багет'],
+  ['Жаровня с говядиной и овощами','460 г',3900,'Говядина, болгарский перец, помидор, лук, сельдерей, чеснок, соевый соус, зира, петрушка'],
+  ['Курица в апельсиновом соусе','450 г',3200,'Куриное филе, зелёный лук, рис, апельсиновый соус, кунжут']]},
+ {c:'Стейки',i:[
+  ['Стейк Ти-бон','400 г',5200,'Розмарин, чеснок, микс салата, кукурузный початок, соус барбекю, огурец, помидор, красный лук'],
+  ['Стейк Рибай','400 г',4900,'Розмарин, чеснок, микс салата, кукурузный початок, соус барбекю, огурец, помидор, красный лук'],
+  ['Стейк из сёмги','300 г',5900,'Сёмга, микс салата, приправа хондаши, красный лук, лимон, сливки, черри']]},
+ {c:'Шашлыки',i:[
+  ['Куриные бёдра','250 г',2100,SH],['Крылышки куриные','250 г',2200,SH],['Баранина кусковая','250 г',3500,SH],
+  ['Филе утиное','250 г',2200,SH],['Филе куриное','250 г',2200,SH],['Антрикот из баранины','350 г',3500,SH],['Шампиньоны на мангале','250 г',1900,SH]]},
+ {c:'Wok и лагман',i:[
+  ['Удон с креветкой','380 г',3200,'Креветки, удон, болгарский перец, морковь, лук, соус терияки, сладкий чили, кунжут'],
+  ['Удон с говядиной','380 г',3200,'Говядина, удон, болгарский перец, морковь, лук, соус терияки, сладкий чили, кунжут'],
+  ['Курица карри','500 г',3400,'Куриное филе, лук, карри, куркума, сливки, рис'],
+  ['Том ям с курицей','400 г',2900,'Паста том ям, куриное филе, шампиньоны, черри, кинза, кокосовое молоко, лайм, рис'],
+  ['Том ям с морепродуктами','400 г',3500,'Паста том ям, морской коктейль, креветки, шампиньоны, черри, кокосовое молоко, лайм, рис'],
+  ['Рамен с говядиной','400 г',2800,'Чан рамен, говядина, яйцо, нори, шампиньон, кимчи, битые огурцы, соевый соус'],
+  ['Рамен с креветками','400 г',3100,'Чан рамен, креветки, яйцо, болгарский перец, кимчи, битые огурцы, соевый соус'],
+  ['Лагман гуйру','500 г',3100,'Говядина, лапша лагман, болгарский перец, помидор, пекинская капуста, сельдерей, чеснок'],
+  ['Лагман цомян','500 г',3100,'Говядина, лапша лагман, болгарский перец, помидор, пекинская капуста, сельдерей, чеснок'],
+  ['Лагман сливочный','500 г',3400,'Куриное филе, сливки, лапша лагман, болгарский перец, помидор, пекинская капуста, сельдерей']]},
+ {c:'Пасты',i:[
+  ['Паста Альфредо','370 г',2900,'Куриное филе, шампиньоны, фетучини, пармезан, белое вино, сливки'],
+  ['Паста Карбонара','300 г',2900,'Ветчина, спагетти, яйцо, пармезан, черри'],
+  ['Лингвини с курицей и брокколи','370 г',3100,'Куриное филе, брокколи, пармезан, сливки, вяленые черри'],
+  ['Пенне с сёмгой и креветками','370 г',3500,'Сёмга, креветки, зелёный лук, томатная паста, черри']]},
+ {c:'Пиццы',i:[
+  ['Маргарита','500 г',2800,'Соус, моцарелла, помидор, базилик, орегано'],
+  ['Пицца 90-х','520 г',3700,'Соус, моцарелла, куриное филе, шампиньоны, орегано'],
+  ['Пепперони','500 г',3700,'Соус, моцарелла, копчёная колбаса, орегано'],
+  ['Перестройка','570 г',3800,'Соус, моцарелла, помидор, шампиньоны, копчёная колбаса, болгарский перец']]},
+ {c:'Гарниры',i:[
+  ['Рис','',900,''],['Овощи на гриле','',1800,'Помидор, красный лук, шампиньон, брокколи, болгарский перец, баклажан'],
+  ['Булгур','',900,''],['Пюре картофельное','',900,''],['Картофель по-деревенски','',1200,'Картофель, лук, шампиньоны']]},
+ {c:'Соусы и дополнительно',i:[
+  ['Сливочно-чесночный соус','',450,''],['Сырный соус','',450,''],['Барбекю','',450,''],['Сладкая горчица','',450,''],['Сладкий чили','',450,''],['Кетчуп','',450,''],
+  ['Хлебная корзина (6 кусочков)','',800,'Тост, багет, бородинский хлеб, сливочное масло'],['Лаваш','',700,''],['Сливочное масло','',350,''],['Халапеньо','',350,'']]},
+ {c:'Десерты',i:[
+  ['Бельгийские вафли с ягодами','',2590,'Малина, клубника, смородина, шоколадный топпинг, мороженое'],
+  ['Бельгийские вафли с фруктами','',2590,'Яблоко, банан, апельсин, мороженое, сгущёнка, какао']]}
+],
+bar:[
+ {c:'Сеты шотов',i:[
+  ['90-е во рту','500 г',3000,'Сладкий портвейн, вишнёвый сок, водка'],
+  ['Красная угроза','500 г',6000,'Куантро, водка, клюквенный сироп, сок лайма'],
+  ['Коматоз','500 г',6000,'Джин, ром, водка, ликёр дыни, блю кюрасао, сиропы киви и яблока, энергетик'],
+  ['Самопал','500 г',6000,'Чёрный ром, кофейный ликёр, карамельный сироп, кола']]},
+ {c:'Алкогольные коктейли',i:[
+  ['Американ Сауэр','',2490,'Виски, сок лимона, красное вино, сахарный сироп'],
+  ['Peach Negroni','',2890,'Сладкий и сухой вермут, джин, персиковый ликёр, апероль'],
+  ['Gimlet','',2490,'Джин, сок лайма, медовый сироп'],
+  ['French 75','',2590,'Джин, сахарный сироп, сок лайма, игристое брют'],
+  ['Mai Tai','',2890,'Ром, миндальный сироп, сок лайма, апельсиновый ликёр'],
+  ['Coma','',2790,'Ром, джин, текила, водка, кофейный ликёр, кола'],
+  ['Midori Smash','',2690,'Ликёр дыни, малибу, швепс, куантро'],
+  ['Белый русский','',2090,'Сливки, водка, кофейный ликёр'],
+  ['Mortis Paiette','',2590,'Пряный ром, смородиновый ликёр, сок лайма'],
+  ['Daiquiri','',2090,'Ром, сахарный сироп, сок лайма']]},
+ {c:'Лимонады',i:[
+  ['Тропический шторм','',2100,'Ананасовый сок, маракуйя, кокос, лимон, содовая'],
+  ['Лавандовый закат','',2100,'Лаванда, лимон, виноградный сок, содовая'],
+  ['Малина в дымке','',2100,'Малина, роза, лимон, мята, содовая'],
+  ['Цитрусовый дым','',2100,'Апельсиновый сок, лимон, бузина, розмарин, содовая'],
+  ['Большой мохито','',2100,'Лайм, сахарный сироп, мята, содовая'],
+  ['Имбирный укус','',2100,'Имбирь, мёд, лимонный сок, содовая']]},
+ {c:'Безалкогольные коктейли',i:[
+  ['Mojito','',1200,'Мята, лайм, сахарный сироп, содовая'],
+  ['Cucumber Morning','',1200,'Тоник, огуречный сироп, бузина, огурец'],
+  ['Apple Sim','',1200,'Яблочный сок, имбирь, лимон, содовая, корица']]},
+ {c:'Пиво',i:[
+  ['Corona Extra','',2200,''],['Светлое разливное','',790,''],['Лайн Брю ягоды','',1500,''],['Лайн Брю Lager','',1500,''],['Безалкогольное пиво','',1100,''],['Bud','',1000,'']]},
+ {c:'Вино и игристое',i:[
+  ['Campo Viejo Blanco','бут.',9900,''],['Campo Viejo Tempranillo','бут.',9900,''],['Campo Viejo Reserva','бут.',9900,''],
+  ['Jacob\'s Creek Classic','бут.',9900,''],['Jacob\'s Creek Shiraz Reserve','бут.',12900,''],
+  ['Café de Paris Lychee','бут.',12900,''],['Café de Paris Demi-Sec','бут.',12900,''],
+  ['Абрау-Дюрсо полусладкое','бут.',7000,''],['Абрау-Дюрсо полусухое','бут.',7000,''],['Charton белое','бут.',8000,''],['Martini Asti','бут.',12900,'']]},
+ {c:'Водка',i:[
+  ['Delicate','',600,''],['Tau Exclusive','',700,''],['Хортица','',750,''],['Kyzylzhar','',800,''],['Бульбашъ','',1000,''],['Ai','',1100,''],['Absolut','',1300,''],['Grey Goose','',2000,'']]},
+ {c:'Виски',i:[
+  ['Jim Beam White','',1500,''],['Jim Beam Honey','',1500,''],['Bulleit Bourbon','',1700,''],['Jmsher (Грузия)','',1200,''],['Kilbeggan','',1500,''],
+  ['William Peel','',1300,''],['Bell\'s Spiced','',1300,''],['Bell\'s Original','',1300,''],['Johnnie Walker Red Label','',3000,''],['Jameson','',1800,''],
+  ['Dewar\'s White','50 мл',1600,''],['Dewar\'s Portuguese','50 мл',1800,''],['Dewar\'s Japanese','50 мл',1800,''],['Dewar\'s Caribbean','50 мл',1800,''],['Ballantine\'s','',1400,''],['William Lawson\'s','',1100,'']]},
+ {c:'Ром, текила, джин',i:[
+  ['Bacardi Spiced','',1700,''],['Bacardi Carta Blanca','',1700,''],['Bacardi Carta Negra','',1700,''],['Oakheart','',1500,''],
+  ['Patron Silver','',2500,''],['San Jose Silver','',1600,''],['San Jose Gold','',1600,''],
+  ['Bombay Sapphire','50 мл',1800,''],['Gordon\'s','',1800,''],['Lockwood','',1500,'']]},
+ {c:'Коньяк, ликёры, вермут',i:[
+  ['Martell VS','50 мл',3500,''],['Martell VSOP','50 мл',5000,''],['Арарат Ани','',2000,''],['Бахус','',1200,''],
+  ['Jägermeister','',2000,''],['Малибу','',1800,''],
+  ['Martini Fiero','50 мл',1900,''],['Martini Bianco','50 мл',1900,''],['Martini Rosso','50 мл',1900,''],['Martini Extra Dry','50 мл',1900,'']]},
+ {c:'Чай',i:[
+  ['Ташкентский','',1690,''],['Гибискус','',1690,''],['Облепиховый','',1690,''],['Малиновый','',1690,''],['Клубничный','',1690,''],['Клюквенный','',1690,''],['Смородиновый','',1690,''],
+  ['Чай чёрный, чашка','',200,''],['Чай чёрный с лимоном, чашка','',250,''],['Чай зелёный, чайник','',1500,''],['Чай чёрный, чайник','',1500,''],
+  ['Молоко','',100,''],['Лимонная нарезка','',260,''],['Апельсиновая нарезка','',200,''],['Лайм нарезка','',400,''],['Мёд','',200,'']]},
+ {c:'Холодные напитки',i:[
+  ['Вода 0,5 без газа','',550,''],['Вода 0,5 с газом','',550,''],['Вода Acqua Rossa','',550,''],['Сок натуральный','',2500,''],
+  ['Кола / Спрайт','',600,''],['Фанта апельсин','',600,''],['Спрайт (стекло)','',650,''],['Энергетик ж/б','',1000,'']]}
+]};
+const SETS=[
+ ['Мясной микс','7–10 человек',37000,'Ти-бон, рибай, филе-миньон, куриное филе, говяжьи и бараньи рёбра, антрикот, крылья, колбаски, овощи гриль, рис, картофель',true],
+ ['Fish микс','7–10 человек',41000,'Сибас, дорадо, сёмга, горбуша, судак, креветки в панцире, овощи, картофель, рис, соусы',false],
+ ['Ассорти шашлыков','7–10 человек',20900,'Бедро и филе курицы, утка, баранина, антрикот, крылышки, шампиньоны, овощи гриль, лаваш, картофель',false],
+ ['Горбуша фаршированная','7–10 человек',16000,'Горбуша, картофель, рис, булгур, перепелиные яйца, овощи, грибной и сливочно-чесночный соусы',false],
+ ['Пивной сет №1','на компанию',13000,'Начос, крылышки, картофельные дольки, охотничьи колбаски, креветки темпура, луковые кольца, 2 соуса',false],
+ ['Пивной сет №2','на компанию',9000,'Охотничьи колбаски, мини-чебуреки, наггетсы, картофельные дольки, сырные палочки, соусы',false],
+ ['Пивной сет №3','на компанию',6000,'Ржаные гренки с чесноком, чечил, наггетсы, картофель фри, охотничьи колбаски, соусы',false]
+];
+
+/* flatten with ids */
+const ALL={};let uid=0;
+for(const t in MENU)MENU[t].forEach(cat=>cat.i=cat.i.map(a=>{const it={id:'m'+(uid++),n:a[0],w:a[1],p:a[2],d:a[3]};ALL[it.id]=it;return it}));
+SETS.forEach((s,k)=>{ALL['s'+k]={id:'s'+k,n:s[0],w:s[1],p:s[2],d:s[3]}});
+
+let tab='kitchen',filter='all',order={};
+try{order=JSON.parse(localStorage.getItem('jamaica_order')||'{}')}catch(e){}
+
+function qtyHTML(id){const q=order[id]||0;return q?`<div class="qty"><button data-m="${id}">−</button><span>${q}</span><button class="add" data-p="${id}">+</button></div>`:`<div class="qty"><button class="add" data-p="${id}">+</button></div>`}
+function renderChips(){
+  $('#chips').innerHTML=`<button class="chip ${filter==='all'?'on':''}" data-c="all">Всё</button>`+MENU[tab].map(c=>`<button class="chip ${filter===c.c?'on':''}" data-c="${c.c}">${c.c}</button>`).join('');
+}
+function renderMenu(){
+  const q=$('#q').value.trim().toLowerCase();
+  const src=q?[...MENU.kitchen,...MENU.bar]:MENU[tab];
+  let html='';
+  src.forEach(cat=>{
+    if(!q&&filter!=='all'&&filter!==cat.c)return;
+    const its=cat.i.filter(it=>!q||(it.n+' '+it.d).toLowerCase().includes(q));
+    if(!its.length)return;
+    html+=`<div class="cat"><h3>${cat.c} <small>${its.length}</small></h3><div class="items">`+its.map(it=>`
+      <div class="item"><div><h4>${it.n}${it.w?`<em>${it.w}</em>`:''}</h4>${it.d?`<p>${it.d}</p>`:''}</div>
+      <div class="r"><span class="price">${fmt(it.p)}</span>${qtyHTML(it.id)}</div></div>`).join('')+`</div></div>`;
+  });
+  $('#menuList').innerHTML=html||'<div class="empty">Ничего не нашли 🙈 Попробуйте другое слово</div>';
+}
+function renderSets(){
+  $('#sets').innerHTML=SETS.slice(0,4).map((s,k)=>`<div class="set reveal ${s[4]?'hit':''}">${s[4]?'<span class="badge">Хит</span>':''}
+    <h3>${s[0]}</h3><div class="who">👥 ${s[1]}</div><p>${s[3]}</p><div class="pp">${fmt(s[2])}</div>
+    <div class="per">≈ ${fmt(Math.round(s[2]/10/100)*100)} – ${fmt(Math.round(s[2]/7/100)*100)} с человека</div>${qtyHTML('s'+k)}</div>`).join('')
+   + `<div class="set reveal" style="grid-column:1/-1"><h3>🍻 Пивные сеты</h3><div class="items" style="margin-top:14px">`+
+   SETS.slice(4).map((s,j)=>{const k=j+4;return `<div class="item"><div><h4>${s[0]}</h4><p>${s[3]}</p></div><div class="r"><span class="price">${fmt(s[2])}</span>${qtyHTML('s'+k)}</div></div>`}).join('')+`</div></div>`;
+  observe();
+}
+document.addEventListener('click',e=>{
+  const p=e.target.closest('[data-p]'),m=e.target.closest('[data-m]');
+  if(p){order[p.dataset.p]=(order[p.dataset.p]||0)+1;sync()}
+  if(m){const id=m.dataset.m;order[id]--;if(order[id]<=0)delete order[id];sync()}
+  const c=e.target.closest('[data-c]');if(c){filter=c.dataset.c;renderChips();renderMenu()}
+});
+document.querySelectorAll('.switch button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.switch button').forEach(x=>x.classList.remove('on'));b.classList.add('on');tab=b.dataset.tab;filter='all';$('#q').value='';renderChips();renderMenu()});
+$('#q').oninput=renderMenu;
+
+/* bill */
+function totals(){let sub=0,cnt=0;for(const id in order){if(!ALL[id]){delete order[id];continue}sub+=ALL[id].p*order[id];cnt+=order[id]}const srv=Math.round(sub*.1);return{sub,srv,tot:sub+srv,cnt}}
+function plural(n,a,b,c){n=Math.abs(n)%100;const n1=n%10;if(n>10&&n<20)return c;if(n1>1&&n1<5)return b;if(n1==1)return a;return c}
+function sync(){
+  try{localStorage.setItem('jamaica_order',JSON.stringify(order))}catch(e){}
+  const t=totals();
+  $('#billTxt').textContent=`${t.cnt} ${plural(t.cnt,'позиция','позиции','позиций')} · ${fmt(t.tot)}`;
+  $('#billBar').classList.toggle('show',t.cnt>0);
+  $('#botBtn').classList.toggle('up',t.cnt>0);
+  $('#billList').innerHTML=Object.keys(order).map(id=>`<div class="bl"><div><b>${ALL[id].n}</b><small>${fmt(ALL[id].p)} × ${order[id]}</small></div>${qtyHTML(id)}</div>`).join('')||'<div class="empty">Пока пусто</div>';
+  $('#sSub').textContent=fmt(t.sub);$('#sSrv').textContent=fmt(t.srv);$('#sTot').textContent=fmt(t.tot);
+  $('#preTxt').textContent=t.cnt?`Приложить предзаказ: ${t.cnt} ${plural(t.cnt,'позиция','позиции','позиций')} на ${fmt(t.tot)}`:'Приложить предзаказ из меню (пока пусто)';
+  $('#fPre').disabled=!t.cnt;if(!t.cnt)$('#fPre').checked=false;
+  renderMenu();renderSets();
+}
+$('#billBar').onclick=()=>$('#drawer').classList.add('open');
+document.querySelectorAll('[data-close]').forEach(x=>x.onclick=()=>$('#drawer').classList.remove('open'));
+$('#toBook').onclick=()=>{$('#drawer').classList.remove('open');$('#fPre').checked=true};
+$('#clearBill').onclick=()=>{order={};sync()};
+
+/* calc */
+$('#calcSet').innerHTML=SETS.map((s,k)=>`<option value="${k}">${s[0]} — ${fmt(s[2])}</option>`).join('');
+function calc(){const s=SETS[$('#calcSet').value],n=+$('#calcN').value;$('#calcNv').textContent=n;const tot=Math.round(s[2]*1.1);
+  $('#calcPer').textContent=fmt(Math.ceil(tot/n/10)*10);$('#calcTot').textContent=`на человека · итого ${fmt(tot)} с обслуживанием`}
+$('#calcSet').onchange=calc;$('#calcN').oninput=calc;
+
+/* time / status (Кокшетау UTC+5) */
+function kzNow(){const d=new Date();return new Date(d.getTime()+d.getTimezoneOffset()*60000+5*3600000)}
+function status(){const h=kzNow().getHours(),open=h>=17||h<3,el=$('#status');el.classList.toggle('on',open);
+  el.querySelector('span').textContent=open?'Открыто сейчас · до 03:00':'Сейчас закрыто · откроемся в 17:00'}
+status();setInterval(status,60000);
+
+/* calendar */
+const MONTHS=['январь','февраль','март','апрель','май','июнь','июль','август','сентябрь','октябрь','ноябрь','декабрь'];
+const MG=['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+const DW=['вс','пн','вт','ср','чт','пт','сб'];
+let today=kzNow();if(today.getHours()<3)today.setDate(today.getDate()-1);today.setHours(0,0,0,0);
+let view=new Date(today.getFullYear(),today.getMonth(),1),sel=null;
+const maxD=new Date(today);maxD.setDate(maxD.getDate()+60);
+function renderCal(){
+  $('#month').textContent=MONTHS[view.getMonth()]+' '+view.getFullYear();
+  let h=['пн','вт','ср','чт','пт','сб','вс'].map(d=>`<div class="dw">${d}</div>`).join('');
+  const first=(view.getDay()+6)%7,days=new Date(view.getFullYear(),view.getMonth()+1,0).getDate();
+  for(let i=0;i<first;i++)h+='<div></div>';
+  for(let d=1;d<=days;d++){const dt=new Date(view.getFullYear(),view.getMonth(),d),wd=dt.getDay();
+    const dis=dt<today||dt>maxD,cls=[(wd==5||wd==6)?'wk':'',+dt==+today?'today':'',sel&&+dt==+sel?'sel':''].join(' ');
+    h+=`<button type="button" class="${cls}" ${dis?'disabled':''} data-d="${dt.getTime()}">${d}</button>`}
+  $('#cal').innerHTML=h;
+  $('#prev').disabled=view<=new Date(today.getFullYear(),today.getMonth(),1);
+  $('#next').disabled=view>=new Date(maxD.getFullYear(),maxD.getMonth(),1);
+}
+$('#cal').onclick=e=>{const b=e.target.closest('[data-d]');if(!b)return;sel=new Date(+b.dataset.d);
+  $('#fDate').value=`${sel.getDate()} ${MG[sel.getMonth()]}, ${DW[sel.getDay()]}`;renderCal()};
+$('#prev').onclick=()=>{view.setMonth(view.getMonth()-1);renderCal()};
+$('#next').onclick=()=>{view.setMonth(view.getMonth()+1);renderCal()};
+$('#fDate').onclick=()=>$('#cal').scrollIntoView({behavior:'smooth',block:'center'});
+const times=[];for(let m=17*60;m<=26*60;m+=30){const hh=Math.floor(m/60)%24;times.push(String(hh).padStart(2,'0')+':'+(m%60?'30':'00'))}
+$('#fTime').innerHTML=times.map(t=>`<option ${t==='20:00'?'selected':''}>${t}</option>`).join('');
+
+/* phone mask */
+$('#fPhone').addEventListener('input',e=>{let d=e.target.value.replace(/\D/g,'');if(d.startsWith('8'))d='7'+d.slice(1);if(d&&!d.startsWith('7'))d='7'+d;d=d.slice(0,11);
+  let s=d?'+7':'';if(d.length>1)s+=' '+d.slice(1,4);if(d.length>4)s+=' '+d.slice(4,7);if(d.length>7)s+=' '+d.slice(7,9);if(d.length>9)s+=' '+d.slice(9,11);e.target.value=s});
+
+$('#form').onsubmit=e=>{
+  e.preventDefault();const err=$('#err');err.style.display='none';
+  const name=$('#fName').value.trim(),phone=$('#fPhone').value.replace(/\D/g,''),g=+$('#fGuests').value;
+  let msg='';if(!sel)msg='Выберите дату в календаре';else if(!name)msg='Укажите имя';else if(phone.length!==11)msg='Проверьте номер телефона';else if(!g||g<1)msg='Укажите количество гостей';
+  if(msg){err.textContent=msg;err.style.display='block';return}
+  const zone=document.querySelector('[name=zone]:checked').value;
+  let txt=`Здравствуйте! Заявка на бронь в Jamaica Bar 🎤\n\n📅 Дата: ${$('#fDate').value}\n🕗 Время: ${$('#fTime').value}\n👥 Гостей: ${g}\n🛋️ Зона: ${zone}\n🎉 Повод: ${$('#fReason').value}\n👤 Имя: ${name}\n📞 Телефон: ${$('#fPhone').value}`;
+  const com=$('#fComment').value.trim();if(com)txt+=`\n💬 ${com}`;
+  if($('#fPre').checked){const t=totals();txt+=`\n\n🧾 Предзаказ:\n`+Object.keys(order).map(id=>`• ${ALL[id].n} × ${order[id]}`).join('\n')+`\nИтого с обслуживанием: ${fmt(t.tot)}`}
+  const url=`https://wa.me/${PHONE}?text=${encodeURIComponent(txt)}`;
+  try{const l=JSON.parse(localStorage.getItem('jamaica_bookings')||'[]');l.push({date:sel.toISOString(),time:$('#fTime').value,name,phone,g,zone,at:Date.now()});localStorage.setItem('jamaica_bookings',JSON.stringify(l))}catch(e){}
+  $('#okWa').href=url;$('#form').style.display='none';$('#ok').style.display='block';window.open(url,'_blank');
+};
+$('#again').onclick=()=>{$('#form').reset();sel=null;renderCal();$('#fTime').value='20:00';$('#ok').style.display='none';$('#form').style.display='block';sync()};
+
+/* mobile nav */
+$('#burger').onclick=()=>$('#mnav').classList.add('open');
+$('#mclose').onclick=()=>$('#mnav').classList.remove('open');
+document.querySelectorAll('#mnav a').forEach(a=>a.onclick=()=>$('#mnav').classList.remove('open'));
+
+/* assistant */
+const FAQ=[
+ {k:['час','время','работ','открыт','закрыв','до скольки','график'],a:'Мы работаем ежедневно с 17:00 до 03:00 🕔'},
+ {k:['брон','стол','заказать стол','резерв'],a:'Забронировать стол можно в разделе «Бронь»: выберите дату, оставьте заявку — она придёт администратору в WhatsApp, и он перезвонит.\nИли звоните: +7 708 506 34 64',go:'#book'},
+ {k:['адрес','где','найти','доехать','останов'],a:'Кокшетау, ул. Мухтара Ауэзова, 189а/2. Рядом остановка «Университет им. Абая Мырзахметова» 📍',go:'#contacts'},
+ {k:['меню','еда','кухн','блюд','поесть'],a:'У нас стейки, шашлыки, пасты, рамен, том ям, лагман, пиццы и закуски к пиву. Всё меню с ценами — в разделе «Меню» 🍽️',go:'#menu'},
+ {k:['цен','стоим','сколько','чек','дорог'],a:'Горячие блюда — от 2 700 до 5 900 ₸, супы — от 1 500 ₸, коктейли — от 2 090 ₸. Обслуживание 10%.\nСеты на компанию 7–10 человек — от 16 000 ₸.'},
+ {k:['обслуж','процент','чаев'],a:'Обслуживание — 10% от суммы счёта.'},
+ {k:['караоке','петь','песн','музык','диджей','dj','живо'],a:'Караоке каждый вечер 🎤 А ещё DJ и живой звук с музыкантом — особенно жарко по выходным!'},
+ {k:['vip','вип','випк','комнат','отдельн'],a:'Есть VIP-комната для своей компании. При бронировании выберите зону «VIP» 🛋️',go:'#book'},
+ {k:['день рожд','днюх','праздн','юбил','корпорат'],a:'Отмечаем праздники! Советуем сеты на компанию (мясной микс, ассорти шашлыков) и VIP-комнату. Напишите пожелания в комментарии к брони 🎈',go:'#company'},
+ {k:['коктейл','бар','алкогол','шот','пиво','вино','напит'],a:'В баре — авторские коктейли, сеты шотов по 500 г, пиво, вино, виски и безалкогольные лимонады 🍹',go:'#menu'},
+ {k:['телефон','позвон','номер','whatsapp','ватсап','связ'],a:'Телефон и WhatsApp: +7 708 506 34 64 📞'},
+ {k:['вегет','без мяса','постн'],a:'Без мяса можно взять: Маргариту, крем-суп грибной, шампиньоны на мангале, овощи на гриле, вафли и закуски 🥗'}
+];
+const QUICK=['Часы работы','Забронировать','Адрес','Цены','Караоке','VIP-комната'];
+function say(t,who){const d=document.createElement('div');d.className='msg '+who;d.textContent=t;$('#botBody').appendChild(d);$('#botBody').scrollTop=1e6}
+function answer(q){const s=q.toLowerCase();const f=FAQ.find(x=>x.k.some(k=>s.includes(k)));
+  setTimeout(()=>{if(f){say(f.a,'b');}
+  else say('Не совсем понял 🙂 Лучше уточнить у администратора: +7 708 506 34 64 (звонок или WhatsApp).','b')},350)}
+$('#botQ').innerHTML=QUICK.map(q=>`<button>${q}</button>`).join('');
+$('#botQ').onclick=e=>{if(e.target.tagName!=='BUTTON')return;say(e.target.textContent,'u');answer(e.target.textContent)};
+$('#botForm').onsubmit=e=>{e.preventDefault();const v=$('#botIn').value.trim();if(!v)return;$('#botIn').value='';say(v,'u');answer(v)};
+let botStarted=false;
+$('#botBtn').onclick=()=>{$('#bot').classList.toggle('open');if(!botStarted){botStarted=true;say('Салем! 👋 Я помощник Jamaica Bar. Подскажу про меню, цены, бронь и караоке.','b')}};
+$('#botX').onclick=()=>$('#bot').classList.remove('open');
+
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+function observe(){document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el))}
+
+$('#yr').textContent=new Date().getFullYear();
+renderChips();renderCal();calc();sync();observe();
+</script>
+</body>
+</html>
